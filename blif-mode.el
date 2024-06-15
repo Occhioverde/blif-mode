@@ -37,18 +37,20 @@
             (x-types '())
             (x-constants '("0" "1" "-"))
             (x-events '())
-            (x-functions '("\.model" "\.inputs" "\.outputs" "\.names" "\.end"))
+            (x-functions '("\.model" "\.inputs" "\.outputs" "\.names" "\.end" "\.start_kiss" "\.i" "\.o" "\.s" "\.p" "\.r" "\.end_kiss"))
 
             (x-keywords-regexp (regexp-opt x-keywords))
             (x-types-regexp (regexp-opt x-types))
             (x-constants-regexp (regexp-opt x-constants))
             (x-events-regexp (regexp-opt x-events))
-            (x-functions-regexp (regexp-opt x-functions)))
+            (x-functions-regexp (regexp-opt x-functions))
+            (x-comments-regexp "#.*"))
 
         `((,x-types-regexp . 'font-lock-type-face)
           (,x-constants-regexp . 'font-lock-constant-face)
           (,x-events-regexp . 'font-lock-builtin-face)
           (,x-functions-regexp . 'font-lock-function-name-face)
+          (,x-comments-regexp . 'font-lock-comment-face)
           (,x-keywords-regexp . 'font-lock-keyword-face))))
 
 ;;;###autoload
